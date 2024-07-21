@@ -41,16 +41,16 @@ client.on('messageCreate', (msg) => {
 		return;
 	}
 
-	const highPriority = msg.content.indexOf('!!');
-	const lowPriority = msg.content.indexOf('!');
+	const highPriority = msg.content.startsWith('!!');
+	const lowPriority = msg.content.startsWith('!');
 
-	if (!~highPriority && !~lowPriority) return;
+	if (!highPriority && !lowPriority) return;
 
-	const text = msg.content.slice(~highPriority ? highPriority : lowPriority, msg.content.length);
+	const text = msg.content.slice(highPriority ? 2 : 1, msg.content.length);
 	if (!text) return;
 
-	const priority = text.startsWith('!!') ? 2 : 0;
-	const message = text.slice(priority === 2 ? 2 : 1, text.length);
+	const priority = highPriority ? 2 : 0;
+	const message = text.slice(highPriority ? 2 : 1, text.length);
 	if (!message) return;
 
 	notify(message, priority);
