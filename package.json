@@ -1,0 +1,12 @@
+{
+	"name": "pushover-js",
+	"version": "1.0.0",
+	"description": "Pushover notifications with priorities using ! prefixes.",
+	"main": "index.js",
+	"keywords": [],
+	"author": "Mario <me@marioparaschiv.com> (github.com/marioparaschiv)",
+	"license": "Unlicensed",
+	"dependencies": {
+		"discord.js": "^14.14.1"
+	}
+}

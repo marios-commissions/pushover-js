@@ -1,0 +1,8 @@
+{
+	"token": "xxx",
+	"user": "pushover-user-token",
+	"api": "pushover-api-token",
+	"channels": [
+		"1234"
+	]
+}
