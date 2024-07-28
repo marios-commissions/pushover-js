@@ -12,7 +12,6 @@ async function notify(message, priority) {
 	url.searchParams.set('message', message);
 	url.searchParams.set('priority', priority);
 
-	if (priority === '2') {
 	if (priority === 2) {
 		url.searchParams.set('retry', '30');
 		url.searchParams.set('expire', '600');
