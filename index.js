@@ -13,6 +13,7 @@ async function notify(message, priority) {
 	url.searchParams.set('priority', priority);
 
 	if (priority === '2') {
+	if (priority === 2) {
 		url.searchParams.set('retry', '30');
 		url.searchParams.set('expire', '600');
 	}
@@ -49,11 +50,7 @@ client.on('messageCreate', (msg) => {
 	const text = msg.content.slice(highPriority ? 2 : 1, msg.content.length);
 	if (!text) return;
 
-	const priority = highPriority ? 2 : 0;
-	const message = text.slice(highPriority ? 2 : 1, text.length);
-	if (!message) return;
-
-	notify(message, priority);
+	notify(text, highPriority ? 2 : 0);
 });
 
 client.login(config.token);
